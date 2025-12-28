@@ -4,6 +4,9 @@ import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
 import Mathlib.Data.Real.Basic
 import Mathlib.Topology.Order.IntermediateValue
 
+set_option linter.unusedVariables false
+set_option linter.style.emptyLine false
+
 open Real
 open Set
 open scoped Real
@@ -40,7 +43,7 @@ structure DistributionAssumptions (x_bar : ℝ) (f : ℝ → ℝ) where
   pdf_integrable : IntervalIntegrable f volume 0 x_bar
   pdf_total_mass_one : ∫ x in (0)..x_bar, f x = 1
   pdf_pos_on_support : ∀ x, 0 < x → x < x_bar → 0 < f x
-  -- We assume the conditional expectation is continuous, which follows from f being continuous
+  -- We assume the conditional expectation is continuous
   h_cont_conditional_expectation : ContinuousOn (conditional_expectation f) (Set.Icc 0 x_bar)
 
 -- The unconditional expected value (μ) should equal the integral of x*f(x)
@@ -67,12 +70,14 @@ theorem equilibrium_exists (p μ x_bar : ℝ) (f : ℝ → ℝ)
 
   -- Show g is continuous on [0, x_bar] using the assumed continuity
   have g_cont : ContinuousOn g (Set.Icc 0 x_bar) := by
-    -- Use ContinuousOn.add, ContinuousOn.sub, etc.
     have h_const : ContinuousOn (fun _ : ℝ => p * μ) (Set.Icc 0 x_bar) :=
       continuous_const.continuousOn
-    have h_cond_smul : ContinuousOn (fun x => (1 - p) * conditional_expectation f x) (Set.Icc 0 x_bar) :=
+    have h_cond_smul :
+        ContinuousOn (fun x => (1 - p) * conditional_expectation f x) (Set.Icc 0 x_bar) :=
       ContinuousOn.const_smul h_cont_conditional (1 - p)
-    have h_add : ContinuousOn (fun x => p * μ + (1 - p) * conditional_expectation f x) (Set.Icc 0 x_bar) :=
+    have h_add :
+        ContinuousOn (fun x => p * μ + (1 - p) * conditional_expectation f x)
+        (Set.Icc 0 x_bar) :=
       h_const.add h_cond_smul
     have h_id : ContinuousOn (fun x : ℝ => x) (Set.Icc 0 x_bar) :=
       continuous_id.continuousOn
@@ -124,7 +129,5 @@ theorem no_complete_disclosure (p μ : ℝ) (f : ℝ → ℝ)
   intro h
   unfold key_equation at h
   rw [conditional_expectation_at_zero] at h
-  -- Now we have: p * μ + (1 - p) * 0 = 0, which simplifies to p * μ = 0
-  -- But we know p > 0 and μ > 0, so p * μ > 0, a contradiction
   have h_pos : p * μ > 0 := mul_pos hp hμ_pos
   linarith

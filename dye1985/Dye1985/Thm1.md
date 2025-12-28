@@ -1,7 +1,7 @@
 
 # Theorem and Proofs on Equilibrium Existence in a Disclosure Model
 
-We present definitions and two theorems formalized in Lean 4, translated into mathematical statements with proofs in Markdown using LaTeX.
+This file presents definitions and two theorems formalized in Lean 4, translated into mathematical statements with proofs in Markdown using LaTeX.
 
 ## Definitions
 
@@ -13,7 +13,7 @@ $$
 E[\tilde{x} \mid \tilde{x} \leq x] =
 \begin{cases}
 0 & \text{if } \int_0^x f(t) \, dt = 0, \\
-\frac{\int_0^x t f(t) \, dt}{\int_0^x f(t) \, dt} & \otherwise.
+\frac{\int_0^x t f(t) \, dt}{\int_0^x f(t) \, dt} & otherwise.
 \end{cases}
 $$
 
@@ -23,7 +23,7 @@ $$
 \mathit{conditional\_expectation}(f)(x) =
 \begin{cases}
 0 & \text{if } \int_0^x f(t) \, dt = 0, \\
-\frac{\int_0^x t f(t) \, dt}{\int_0^x f(t) \, dt} & \otherwise.
+\frac{\int_0^x t f(t) \, dt}{\int_0^x f(t) \, dt} & otherwise.
 \end{cases}
 $$
 
