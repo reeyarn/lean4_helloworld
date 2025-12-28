@@ -1,3 +1,13 @@
+/-!
+# Dye (1985) Theorem 1 in Lean 4
+
+This file presents definitions and  the theorem from Dye (1985) formalized in Lean 4.
+
+```bash
+lake lean Dye1985/Thm1.lean`
+-/
+
+
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 import Mathlib.MeasureTheory.Measure.Lebesgue.Basic

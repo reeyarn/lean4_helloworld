@@ -53,7 +53,7 @@ We assume the following structure holds:
 - $f(x) > 0$ for all $x \in (0, \bar{x})$
 - The conditional expectation function is continuous on $[0, \bar{x}]$
 
-## Theorem 1: Existence of Non-Degenerate Equilibrium
+## Theorem 1 Part One: Existence of Non-Degenerate Equilibrium
 
 **Theorem.** Let $p \in (0,1)$, $\mu > 0$, $\mu < \bar{x}$, and let the distribution assumptions hold with total mass $\int_0^{\bar{x}} f(x) \, dx = 1$ and $\mu = \int_0^{\bar{x}} x f(x) \, dx$.  
 Then there exists $x \in (0, \bar{x})$ such that
@@ -95,7 +95,7 @@ Moreover, this root cannot be at the endpoints:
 
 Hence, the root satisfies $0 < x < \bar{x}$, and $g(x) = 0$ is equivalent to the key equation. ∎
 
-## Theorem 2: No Complete Disclosure Equilibrium ($x = 0$)
+## Theorem 1 Part Two: No Complete Disclosure Equilibrium ($x = 0$)
 
 **Theorem.** Under the assumptions $p \in (0,1)$ and $\mu > 0$, there is no equilibrium with full disclosure threshold $x = 0$. That is,
 
