@@ -10,24 +10,10 @@ This repository shares my personal approach to getting started with Lean 4 and e
 
 ## Getting Started: Installing Lean 4
 
-The easiest and recommended way to use Lean 4 is with **Visual Studio Code (VS Code)** and the official Lean 4 extension.
+The easiest and recommended way to use Lean 4 is with **Visual Studio Code (VS Code)** and the official Lean 4 extension
+[`vscode:extension/leanprover.lean4`](https://marketplace.visualstudio.com/items?itemName=leanprover.lean4).
 
-1. **Install VS Code**  
-   Download and install from [https://code.visualstudio.com/](https://code.visualstudio.com/).
-
-2. **Install the Lean 4 extension**  
-   - Open VS Code.
-   - Go to the Extensions view (`Ctrl+Shift+X` or `Cmd+Shift+X` on macOS).
-   - Search for "lean4".
-   - Install the extension published by **Lean FRO** (official).
-
-3. **Complete the setup**  
-   - After installing the extension, create a new file and save it with a `.lean` extension (e.g., `Hello.lean`).
-   - Or open a new empty file and change the language mode to "Lean 4" (bottom-right corner).
-   - The extension will prompt you to install Lean using **elan** (the Lean version manager). Follow the instructions—it will download and set up everything automatically.
-   - A "Welcome" or setup guide page should appear with step-by-step help.
-
-For more details, see the official guide: [https://lean-lang.org/lean4/](https://lean-lang.org/lean4/).
+For more details, see the official guide: [https://lean-lang.org/install/](https://lean-lang.org/install/).
 
 ## Creating Your First Lean Project
 
@@ -39,3 +25,4 @@ Once Lean is installed:
    - Run:  
      ```bash
      lake +leanprover/lean4:latest new my_project
+     ``` 
